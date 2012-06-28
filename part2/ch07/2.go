@@ -2,6 +2,12 @@
 // then prints that array to the screen
 package main
 
-func main() {
+import "fmt"
 
+func main() {
+	var a [16]int
+	for i := 0; i < 16; i++ {
+		a[i] = i
+	}
+	fmt.Println(a)
 }
