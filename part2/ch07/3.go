@@ -5,12 +5,12 @@ package main
 
 import (
 	"fmt"
-	"errors"
-	"os"
+	//"errors"
+	//"os"
 )
 
 const (
-	ARRSIZE int = 60
+	ARRSIZE int = 51
 )
 
 var fibs [ARRSIZE]uint64
@@ -20,7 +20,11 @@ first time fibo(n) is computed */
 
 func main() {
 	for i := 0; i < 51; i++ {
-		fibn, _ := fibo(i)
+		fibn, err := fibo(i)
+		if err != nil {
+			fmt.Printf("%v\n", err)
+			break
+		}
 		fmt.Printf("Fib(%d): %d\n", i, fibn)
 	}
 }
@@ -32,9 +36,7 @@ func fibo(n int) (fibn uint64, err error) {
 		return uint64(n), err
 	}
 	if n >= ARRSIZE {
-		err = errors.New("err: n larger than len(array) =")
-		fmt.Println(err, ARRSIZE)
-		os.Exit(1)
+		return 0, fmt.Errorf("Array overflow: n = %d Cannot be >= %v", n, ARRSIZE)
 	}
 	if fibs[n] != 0 {
 		fibn = fibs[n]
