@@ -15,6 +15,6 @@ func main() {
 	fmt.Print(splitBuff(2, buf))
 }
 
-func splitBuff(n int, buf bytes.Buffer) (head, tail []byte) {
+func splitBuff(n int, buf bytes.Buffer) (head, tail []string) {
 
 }
