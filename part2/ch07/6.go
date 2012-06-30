@@ -12,9 +12,9 @@ var buf bytes.Buffer
 func main() {
 	data := "steven"
 	buf.WriteString(data)
-	fmt.Print(splitBuff(2, buf))
+	splitBuff(2, buf)
 }
 
-func splitBuff(n int, buf bytes.Buffer) (head, tail []string) {
-
+func splitBuff(n int, buf bytes.Buffer) {
+	fmt.Println(buf.String()[:n], " ", buf.String()[n:])
 }

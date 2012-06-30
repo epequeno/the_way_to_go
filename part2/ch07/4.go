@@ -8,7 +8,7 @@ import (
 )
 
 func main() {
-	fmt.Println(fibo(10))
+	fmt.Println(fibo(15))
 }
 
 // The func fibo(n) takes an integer n as its single argument and returns 
